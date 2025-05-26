@@ -1,8 +1,41 @@
+import CompanionCard from "@/components/CompanionCard";
+import CompanionsList from "@/components/CompanionsList";
+import CTA from "@/components/CTA";
+import {recentSessions} from "@/constants";
+
 const Page = () => {
     return (
-        <div>
-            Page
-        </div>
+        <article>
+            <h1 className="text-2xl underline">Popular Companions</h1>
+
+            <section className="home-section">
+                <CompanionCard id="321" name="Explorers"
+                               topic="Network of the brain"
+                               subject="science"
+                               duration={45}
+                               color="#ffda6e"
+                />
+                <CompanionCard id="548" name="Verba the Vocab Builder"
+                               topic="language"
+                               subject="English"
+                               duration={30}
+                               color="#BDE7FF"
+                 />
+                <CompanionCard id="321" name="Countsy the Number Wizard"
+                                                 topic="Deritives & Integrals"
+                                                 subject="math"
+                                                 duration={30}
+                                                 color="#e5d0ff"
+                />
+            </section>
+            <section className="home-section">
+                <CompanionsList title="Recently Completed Sessions"
+                                companions={recentSessions}
+                                className="w-2/3 max-lg:-w-full"
+                />
+                <CTA />
+            </section>
+        </article>
     );
 };
 
